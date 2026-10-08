@@ -22,3 +22,10 @@ Commande utilisée : `git revert HEAD`
 
 `git revert` crée un nouveau commit qui applique l'inverse des modifications du commit « Ajout promotion ». Le commit d'origine reste dans l'historique.
 Avec `git reset`, l'historique aurait été réécrit, ce qui aurait créé des incohérences. `git revert` est la méthode sûre pour un commit déjà partagé.
+
+## Mission 11 – Récupération d'un commit précis
+
+Commande utilisée : `git cherry-pick dea898d`
+
+
+Une fusion classique (`git merge test`) aurait intégré les trois commits de la branche, y compris la modification expérimentale des couleurs et le texte de test dans le footer, qui ne devaient pas arriver sur la branche principale. `git cherry-pick` permet de n'appliquer que le commit voulu (la correction orthographique), en créant une copie de ce commit sur `master`.
