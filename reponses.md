@@ -29,3 +29,17 @@ Commande utilisée : `git cherry-pick dea898d`
 
 
 Une fusion classique (`git merge test`) aurait intégré les trois commits de la branche, y compris la modification expérimentale des couleurs et le texte de test dans le footer, qui ne devaient pas arriver sur la branche principale. `git cherry-pick` permet de n'appliquer que le commit voulu (la correction orthographique), en créant une copie de ce commit sur `master`.
+
+## Mission 12 – Version stable
+
+Commandes utilisées : `git tag -a v1.0.0 -m "Première version stable de NovaTech"` puis `git show v1.0.0`
+
+Signification de 1.0.0:
+- 1 (MAJEUR) : changements incompatibles avec les versions précédentes
+- 0 (MINEUR) : ajout de fonctionnalités compatibles
+- 0 (CORRECTIF) : corrections de bugs sans nouvelle fonctionnalité
+
+Versions suivantes :
+- Correction d'un bug mineur : 1.0.1
+- Nouvelle fonctionnalité compatible : 1.1.0
+- Refonte majeure incompatible : 2.0.0
