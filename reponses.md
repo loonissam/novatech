@@ -43,3 +43,25 @@ Versions suivantes :
 - Correction d'un bug mineur : 1.0.1
 - Nouvelle fonctionnalité compatible : 1.1.0
 - Refonte majeure incompatible : 2.0.0
+
+## Questions finales
+
+1. **Zone de travail / staging / historique** : la zone de travail contient les fichiers tels qu'on les modifie. La zone de staging (index) contient ce qu'on a préparé avec `git add` pour le prochain commit. L'historique contient les commits enregistrés avec `git commit`.
+
+2. **Branche dédiée** : elle permet de développer une fonctionnalité sans casser la branche principale, de travailler en parallèle et de n'intégrer le travail qu'une fois terminé et testé.
+
+3. **Missions 8 et 9** : `git reset` supprime le commit de l'historique (il le réécrit), ce qui ne convient qu'à un commit local non partagé. `git revert` ajoute un nouveau commit qui annule le précédent, sans réécrire l'historique : c'est la méthode sûre pour un commit déjà partagé.
+
+4. **Mettre de côté (stash)** : quand on doit changer de tâche ou de branche en urgence alors que le travail en cours n'est pas prêt à être commité.
+
+5. **Cherry-pick plutôt que merge** : il permet de récupérer uniquement une correction précise sans importer les autres commits de la branche (tests, expérimentations non validées).
+
+6. **HEAD** : c'est le pointeur vers le commit actuellement extrait, en général le dernier commit de la branche courante.
+
+7. **HEAD~2** : le commit situé deux commits avant HEAD (le « grand-parent » du commit actuel).
+
+8. **Tag** : il marque un commit précis de façon permanente, généralement pour identifier une version publiée (ex. v1.0.0).
+
+9. **Commits petits et précis** : l'historique est plus lisible, il est plus facile de retrouver l'origine d'un bug, et on peut annuler ou récupérer une modification précise sans toucher au reste.
+
+10. **Fichiers non versionnés** : certains fichiers sont générés automatiquement, propres à chaque machine, ou contiennent des données sensibles (mots de passe, clés API dans `.env`). Les versionner alourdirait le dépôt ou exposerait des secrets.
